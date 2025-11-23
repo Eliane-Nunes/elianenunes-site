@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Eliane Nunes — Livros & Cursos</title>
+  <meta name="description" content="Livros e cursos que transformam. Loja de Eliane Nunes." />
+  <style>
+    :root{
+      --bg:#fff8fb; --accent:#d14f8b; --muted:#6b6b6b; --card:#ffffff; --glass: rgba(255,255,255,0.6);
+      --maxw:1100px; font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,var(--bg),#fff);color:#222}
+    header{background:linear-gradient(90deg, rgba(209,79,139,0.08), rgba(255,255,255,0.02));backdrop-filter:blur(6px);position:sticky;top:0;z-index:60;border-bottom:1px solid rgba(0,0,0,0.03)}
+    .container{max-width:var(--maxw);margin:0 auto;padding:24px}
+    nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:54px;height:54px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#ff9ccf);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:18px}
+    .navlinks{display:flex;gap:12px;align-items:center}
+    .navlinks a{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:8px}
+    .navlinks a:hover{background:rgba(0,0,0,0.03);color:#111}
+    .hero{padding:48px 0;display:grid;grid-template-columns:1fr 420px;gap:24px;align-items:center}
+    .hero h1{font-size:34px;margin:0 0 12px;color:var(--accent)}
+    .hero p{margin:0 0 18px;color:var(--muted)}
+    .cta{display:flex;gap:12px}
+    .btn{background:var(--accent);color:#fff;padding:12px 18px;border-radius:10px;border:0;cursor:pointer}
+    .btn.alt{background:transparent;border:1px solid var(--accent);color:var(--accent)}
+    .card{background:var(--card);border-radius:12px;padding:16px;box-shadow:0 6px 18px rgba(16,24,40,0.06)}
+
+    /* Books grid */
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .book{display:flex;gap:12px}
+    .cover{width:96px;height:140px;border-radius:6px;background:linear-gradient(180deg,#fff,#eee);flex-shrink:0}
+    .book h4{margin:0 0 6px}
+    .price{font-weight:700;color:var(--accent)}
+    .actions{margin-top:10px;display:flex;gap:8px}
+
+    /* Courses */
+    .courses{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+    .course{padding:14px;border-radius:10px;background:linear-gradient(180deg,#fff,#fff);box-shadow:0 6px 18px rgba(16,24,40,0.04)}
+
+    footer{padding:28px 0;background:#fff;border-top:1px solid rgba(0,0,0,0.04);margin-top:36px}
+    .footer-flex{display:flex;justify-content:space-between;gap:20px;align-items:center}
+
+    /* Responsive */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr;}
+      .grid{grid-template-columns:repeat(2,1fr)}
+      .courses{grid-template-columns:1fr}
+    }
+    @media (max-width:560px){
+      .grid{grid-template-columns:1fr}
+      nav{padding:8px 0}
+      .logo{width:46px;height:46px}
+      .hero h1{font-size:26px}
+    }
+
+    /* small helpers */
+    .muted{color:var(--muted)}
+    .center{text-align:center}
+    .pill{display:inline-block;padding:6px 10px;background:rgba(209,79,139,0.08);color:var(--accent);border-radius:999px;font-weight:600}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="brand">
+          <div class="logo">EN</div>
+          <div>
+            <div style="font-weight:700">Eliane Nunes</div>
+            <div style="font-size:12px;color:var(--muted)">Livros & Cursos</div>
+          </div>
+        </div>
+        <div class="navlinks">
+          <a href="#home">Home</a>
+          <a href="#livros">Livros</a>
+          <a href="#cursos">Cursos</a>
+          <a href="#sobre">Sobre</a>
+          <a href="#contato">Contato</a>
+          <a class="pill" href="#contato">Comprar</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" id="home">
+    <section class="hero">
+      <div>
+        <h1>Histórias que curam. Cursos que transformam.</h1>
+        <p>Livros e cursos criados para tocar a alma e despertar novas possibilidades. Explore, sinta e transforme-se — uma página por vez.</p>
+        <div class="cta">
+          <button class="btn" onclick="location.href='#livros'">📚 Ver Livros</button>
+          <button class="btn alt" onclick="location.href='#cursos'">🎓 Ver Cursos</button>
+          <button class="btn" onclick="openWhatsApp('Olá! Quero comprar um livro / curso.')">💬 Falar no WhatsApp</button>
+        </div>
+
+        <div style="margin-top:22px" class="card">
+          <strong>Destaque:</strong>
+          <div style="margin-top:8px" class="muted">Último lançamento: <strong>"Caminhos de Luz"</strong> — Reflexões e práticas para transformar o cotidiano.</div>
+        </div>
+      </div>
+
+      <aside>
+        <div class="card center">
+          <img src="https://via.placeholder.com/300x180?text=Capa+%C3%9Altimo+Lançamento" alt="capa" style="width:100%;border-radius:8px;margin-bottom:12px"/>
+          <div style="font-weight:700">Caminhos de Luz</div>
+          <div class="muted">R$ 39,90</div>
+          <div style="margin-top:12px"><button class="btn" onclick="openWhatsApp('Olá! Quero comprar Caminhos de Luz')">Comprar via WhatsApp</button></div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="livros" style="margin-top:28px">
+      <h2>Meus Livros</h2>
+      <p class="muted">Cada livro é escrito com amor e a intenção de transformar quem lê.</p>
+
+      <div class="grid" style="margin-top:18px">
+        <!-- Book 1 -->
+        <div class="card book">
+          <div class="cover"><img src="https://via.placeholder.com/96x140?text=Livro+1" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:6px"/></div>
+          <div>
+            <h4>Livro 1 — Caminhos de Luz</h4>
+            <div class="muted">Um livro para quem busca calma, sentido e práticas simples para o dia a dia.</div>
+            <div class="price">R$ 39,90</div>
+            <div class="actions">
+              <button class="btn" onclick="openWhatsApp('Olá! Quero comprar Livro: Caminhos de Luz')">Comprar</button>
+              <button class="btn alt" onclick="showDetails('livro1')">Ver mais</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Book 2 -->
+        <div class="card book">
+          <div class="cover"><img src="https://via.placeholder.com/96x140?text=Livro+2" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:6px"/></div>
+          <div>
+            <h4>Livro 2 — Palavras que Curam</h4>
+            <div class="muted">Textos e histórias que tocam o coração e abrem novas visões.</div>
+            <div class="price">R$ 29,90</div>
+            <div class="actions">
+              <button class="btn" onclick="openWhatsApp('Olá! Quero comprar Livro: Palavras que Curam')">Comprar</button>
+              <button class="btn alt" onclick="showDetails('livro2')">Ver mais</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Book 3 -->
+        <div class="card book">
+          <div class="cover"><img src="https://via.placeholder.com/96x140?text=Livro+3" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:6px"/></div>
+          <div>
+            <h4>Livro 3 — O Recomeço</h4>
+            <div class="muted">Histórias de cura, coragem e novos começos.</div>
+            <div class="price">R$ 24,90</div>
+            <div class="actions">
+              <button class="btn" onclick="openWhatsApp('Olá! Quero comprar Livro: O Recomeço')">Comprar</button>
+              <button class="btn alt" onclick="showDetails('livro3')">Ver mais</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="cursos" style="margin-top:36px">
+      <h2>Meus Cursos</h2>
+      <p class="muted">Cursos pensados para trazer clareza, prática e transformação — à sua maneira.</p>
+
+      <div class="courses" style="margin-top:18px">
+        <div class="course">
+          <h3>Curso: Escrita Transformadora</h3>
+          <p class="muted">Aprenda técnicas de escrita para emocionar, inspirar e publicar suas histórias.</p>
+          <ul>
+            <li>Módulo 1 — Encontro com a voz</li>
+            <li>Módulo 2 — Estrutura e emoção</li>
+            <li>Módulo 3 — Publicação & vendas</li>
+          </ul>
+          <div style="margin-top:8px"><button class="btn" onclick="openWhatsApp('Olá! Quero mais informações sobre o curso Escrita Transformadora')">Quero esse curso</button></div>
+        </div>
+
+        <div class="course">
+          <h3>Curso: Jornada da Leitura</h3>
+          <p class="muted">Técnicas para quem quer transformar leitura em prática de vida.</p>
+          <ul>
+            <li>Módulo 1 — Escolha de leituras</li>
+            <li>Módulo 2 — Aplicando o conteúdo</li>
+            <li>Módulo 3 — Comunidade de leitura</li>
+          </ul>
+          <div style="margin-top:8px"><button class="btn" onclick="openWhatsApp('Olá! Quero mais informações sobre o curso Jornada da Leitura')">Quero esse curso</button></div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="sobre" style="margin-top:36px">
+      <h2>Sobre Eliane Nunes</h2>
+      <p class="muted">Sou Eliane Nunes, apaixonada por palavras que curam e por conteúdos que transformam vidas. Minha missão é inspirar pessoas, mostrar novos caminhos e fortalecer quem está em busca de crescimento pessoal, emocional e espiritual.</p>
+
+      <div style="display:flex;gap:18px;margin-top:14px;flex-wrap:wrap">
+        <div class="card" style="flex:1;min-width:220px">
+          <h4>Missão</h4>
+          <p class="muted">Levar transformação por meio da leitura e do conhecimento.</p>
+        </div>
+        <div class="card" style="flex:1;min-width:220px">
+          <h4>Visão</h4>
+          <p class="muted">Tocar vidas e criar oportunidades de crescimento.</p>
+        </div>
+        <div class="card" style="flex:1;min-width:220px">
+          <h4>Valores</h4>
+          <p class="muted">Amor, propósito, verdade, transformação.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" style="margin-top:36px;margin-bottom:36px">
+      <h2>Fale Comigo</h2>
+      <p class="muted">Tire dúvidas, faça pedidos ou combine envios. Vou adorar te atender.</p>
+
+      <div style="display:flex;gap:18px;flex-wrap:wrap;margin-top:14px">
+        <div style="flex:1;min-width:260px" class="card">
+          <h4>Contato rápido</h4>
+          <p class="muted">WhatsApp: <strong id="phoneDisplay">+55 (xx) xxxxx-xxxx</strong></p>
+          <p class="muted">E-mail: <a href="mailto:seuemail@exemplo.com">seuemail@exemplo.com</a></p>
+          <div style="margin-top:10px"><button class="btn" onclick="openWhatsApp('Olá! Tenho interesse em seus livros e cursos')">Abrir WhatsApp</button></div>
+        </div>
+
+        <form class="card" style="flex:1;min-width:260px" onsubmit="event.preventDefault(); alert('Obrigado! Mensagem recebida. Abra o WhatsApp para finalizar.')">
+          <h4>Enviar mensagem</h4>
+          <label class="muted">Nome</label>
+          <input required placeholder="Seu nome" style="width:100%;padding:10px;margin:6px 0;border-radius:8px;border:1px solid #e6e6e6" />
+          <label class="muted">Mensagem</label>
+          <textarea required placeholder="Escreva sua dúvida" style="width:100%;padding:10px;margin:6px 0;border-radius:8px;border:1px solid #e6e6e6"></textarea>
+          <div style="text-align:right"><button class="btn" type="submit">Enviar</button></div>
+        </form>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container footer-flex">
+      <div>
+        <strong>Eliane Nunes</strong>
+        <div class="muted">Livros & Cursos • Transformação</div>
+      </div>
+      <div class="muted">© 2025 Eliane Nunes — Todos os direitos reservados</div>
+    </div>
+  </footer>
+
+  <script>
+    // Replace this phone with your real number in international format, no + or dashes. Example: 5511999999999
+    const WA_NUMBER = '5599999999999';
+    function openWhatsApp(message){
+      const text = encodeURIComponent(message || 'Olá! Tenho interesse em seus livros e cursos');
+      const url = `https://wa.me/${WA_NUMBER}?text=${text}`;
+      window.open(url, '_blank');
+    }
+
+    function showDetails(id){
+      alert('Aqui você pode colocar uma página de detalhes do produto. ID: '+id);
+    }
+
+    // small enhancement: smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        e.preventDefault();
+        const id = a.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+      });
+    });
+  </script>
+</body>
+</html>
